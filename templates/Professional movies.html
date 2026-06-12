@@ -1,0 +1,49 @@
+<div class="row">
+
+{% for movie in movies %}
+
+<div class="col-md-4">
+
+    <div class="card shadow mb-4">
+
+        <img
+        src="/static/posters/{{ movie[6] }}"
+        class="card-img-top"
+        height="350">
+
+        <div class="card-body">
+
+            <h4>
+                {{ movie[1] }}
+            </h4>
+
+            <p>
+                {{ movie[2] }}
+            </p>
+
+            <p>
+                {{ movie[3] }}
+            </p>
+
+            <p>
+                Seats:
+                {{ movie[5] }}
+            </p>
+
+            <a
+            href="/book-movie/{{ movie[0] }}"
+            class="btn btn-success">
+
+                Book Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+</div>

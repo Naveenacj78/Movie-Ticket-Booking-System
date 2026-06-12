@@ -1,0 +1,29 @@
+os.makedirs("receipts", exist_ok=True)
+
+filename = "receipts/receipt.txt"
+
+with open(filename, "w") as file:
+    file.write("====================================\n")
+    file.write("      MOVIE TICKET RECEIPT\n")
+    file.write("====================================\n\n")
+
+    file.write(f"Booking ID   : {data[0]}\n")
+    file.write(f"User ID      : {data[1]}\n")
+    file.write(f"Movie ID     : {data[2]}\n\n")
+
+    file.write(f"Movie Name   : {data[3]}\n")
+    file.write(f"Genre        : {data[4]}\n")
+    file.write(f"Show Time    : {data[5]}\n\n")
+
+    file.write(f"Seat Number  : {data[6]}\n\n")
+
+    file.write(f"Booking Time : {data[7]}\n\n")
+
+    file.write("====================================\n")
+    file.write("Booking Status : CONFIRMED\n")
+    file.write("====================================\n\n")
+
+    file.write("Thank You For Booking!\n")
+    file.write("Enjoy Your Movie.\n")
+
+print(f"Receipt Generated: {filename}")

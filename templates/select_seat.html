@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2>Select Seat</h2>
+
+    <hr>
+
+    <div class="card p-4">
+
+        <h4>{{ movie[1] }}</h4>
+
+        <p>
+            Genre: {{ movie[2] }}
+        </p>
+
+        <p>
+            Show Time: {{ movie[3] }}
+        </p>
+
+        <p>
+            Available Seats:
+            {{ movie[5] }}
+        </p>
+
+    </div>
+
+    <br>
+
+    <form method="POST">
+
+        <div class="mb-3">
+
+            <label>
+                Available Seats
+            </label>
+
+            <select
+                class="form-control"
+                name="seat_number"
+                required>
+
+                {% for seat in seats %}
+
+                <option value="{{ seat[0] }}">
+                    {{ seat[0] }}
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+        </div>
+
+        <button
+            class="btn btn-success">
+
+            Confirm Booking
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

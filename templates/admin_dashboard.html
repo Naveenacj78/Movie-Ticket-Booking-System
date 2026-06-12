@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2>Admin Dashboard</h2>
+
+    <hr>
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <div class="card bg-primary text-white shadow">
+
+                <div class="card-body">
+
+                    <h1>
+                        {{ total_movies }}
+                    </h1>
+
+                    <h5>
+                        Total Movies
+                    </h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card bg-success text-white shadow">
+
+                <div class="card-body">
+
+                    <h1>
+                        {{ total_bookings }}
+                    </h1>
+
+                    <h5>
+                        Total Bookings
+                    </h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card bg-danger text-white shadow">
+
+                <div class="card-body">
+
+                    <h1>
+                        {{ total_users }}
+                    </h1>
+
+                    <h5>
+                        Total Users
+                    </h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="d-grid gap-2">
+
+        <a href="/movies"
+           class="btn btn-primary">
+
+            Manage Movies
+
+        </a>
+
+        <a href="/add-movie"
+           class="btn btn-success">
+
+            Add Movie
+
+        </a>
+
+        <a href="/reports"
+           class="btn btn-warning">
+
+            Sales Report
+
+        </a>
+
+        <a href="/analytics"
+           class="btn btn-dark">
+
+            Analytics
+
+        </a>
+
+        <a href="/export-bookings"
+           class="btn btn-info">
+
+            Export Bookings CSV
+
+        </a>
+
+        <a href="/export-sales"
+           class="btn btn-secondary">
+
+            Export Sales CSV
+
+        </a>
+
+        <a href="/logout"
+           class="btn btn-danger">
+
+            Logout
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

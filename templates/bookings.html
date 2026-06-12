@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2>
+        My Bookings
+    </h2>
+
+    <hr>
+
+    {% if bookings %}
+
+    <table class="table table-bordered table-striped">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>Booking ID</th>
+                <th>Movie Name</th>
+                <th>Seat Number</th>
+                <th>Booking Time</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for booking in bookings %}
+
+            <tr>
+
+                <td>{{ booking[0] }}</td>
+
+                <td>{{ booking[1] }}</td>
+
+                <td>{{ booking[2] }}</td>
+
+                <td>{{ booking[3] }}</td>
+
+                <td>
+
+                    <a href="/generate-receipt/{{ booking[0] }}"
+                       class="btn btn-success btn-sm">
+
+                        Receipt
+
+                    </a>
+
+                    <a href="/cancel-booking/{{ booking[0] }}"
+                       class="btn btn-danger btn-sm"
+                       onclick="return confirm('Cancel this booking?')">
+
+                        Cancel
+
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    {% else %}
+
+    <div class="alert alert-warning">
+
+        No Bookings Found
+
+    </div>
+
+    {% endif %}
+
+    <a href="/user-dashboard"
+       class="btn btn-primary">
+
+        Back to Dashboard
+
+    </a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-success text-white">
+
+            <h3>Add New Movie</h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST"
+                  enctype="multipart/form-data">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Movie Title
+                    </label>
+
+                    <input type="text"
+                           name="title"
+                           class="form-control"
+                           required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Genre
+                    </label>
+
+                    <input type="text"
+                           name="genre"
+                           class="form-control"
+                           required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Show Time
+                    </label>
+
+                    <input type="text"
+                           name="show_time"
+                           placeholder="7:00 PM"
+                           class="form-control"
+                           required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Total Seats
+                    </label>
+
+                    <input type="number"
+                           name="total_seats"
+                           class="form-control"
+                           required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Movie Poster
+                    </label>
+
+                    <input type="file"
+                           name="poster"
+                           class="form-control">
+
+                </div>
+
+                <button type="submit"
+                        class="btn btn-success">
+
+                    Add Movie
+
+                </button>
+
+                <a href="/admin-dashboard"
+                   class="btn btn-secondary">
+
+                    Back
+
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

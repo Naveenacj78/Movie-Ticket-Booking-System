@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+
+            <h3>
+                User Dashboard
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <h5>
+                Welcome {{ username }}
+            </h5>
+
+            <hr>
+
+            <a href="/movies"
+               class="btn btn-primary">
+
+               View Movies
+
+            </a>
+
+            <a href="/bookings"
+               class="btn btn-success">
+
+               My Bookings
+
+            </a>
+
+            <a href="/logout"
+               class="btn btn-danger">
+
+               Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

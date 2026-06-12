@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-success text-white">
+
+            <h2 class="text-center">
+                Movie Ticket Receipt
+            </h2>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered">
+
+                <tr>
+                    <th>Booking ID</th>
+                    <td>{{ receipt.booking_id }}</td>
+                </tr>
+
+                <tr>
+                    <th>Customer Name</th>
+                    <td>{{ receipt.user_name }}</td>
+                </tr>
+
+                <tr>
+                    <th>Movie Name</th>
+                    <td>{{ receipt.movie_name }}</td>
+                </tr>
+
+                <tr>
+                    <th>Genre</th>
+                    <td>{{ receipt.genre }}</td>
+                </tr>
+
+                <tr>
+                    <th>Show Time</th>
+                    <td>{{ receipt.show_time }}</td>
+                </tr>
+
+                <tr>
+                    <th>Seat Number</th>
+                    <td>{{ receipt.seat_number }}</td>
+                </tr>
+
+                <tr>
+                    <th>Booking Time</th>
+                    <td>{{ receipt.booking_time }}</td>
+                </tr>
+
+                <tr>
+                    <th>Status</th>
+                    <td>
+                        <span class="badge bg-success">
+                            CONFIRMED
+                        </span>
+                    </td>
+                </tr>
+
+            </table>
+
+            <div class="text-center">
+
+                <button
+                    onclick="window.print()"
+                    class="btn btn-primary">
+
+                    Print Receipt
+
+                </button>
+
+                <a href="/receipt-pdf/{{ receipt.booking_id }}"
+                   class="btn btn-success">
+
+                    Download PDF
+
+                </a>
+
+                <a href="/bookings"
+                   class="btn btn-secondary">
+
+                    Back
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
